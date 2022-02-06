@@ -1,0 +1,21 @@
+@use '../../styles/variables' as var;
+
+.boxStatistics {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  margin-left: 20px;
+  border: 2px solid var.$mainBorderColor;
+  border-radius: 15px;
+}
+
+.boxDate {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var.$mainBorderColor;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}

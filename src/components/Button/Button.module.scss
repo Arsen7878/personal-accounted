@@ -3,11 +3,12 @@
 .button {
   display: block;
   min-width: 150px;
+  width: 100%;
   padding: 5px 10px;
   font-family: inherit;
   font-size: 15px;
   background-color: transparent;
-  border: 3px solid var.$colorFrame;
+  border: 2px solid var.$colorFrame;
   border-radius: 8px;
   color: black;
   box-shadow: none;
@@ -19,4 +20,12 @@
     color: white;
     box-shadow: var.$shadow;
   }
+}
+
+.button.add {
+  border: 2px solid green;
+}
+
+.button.delete {
+  border: 2px solid red;
 }

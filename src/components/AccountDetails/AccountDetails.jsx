@@ -1,11 +1,20 @@
 import AccountInfomation from 'components/AccountInfomation';
+import AddAccount from 'components/AddAccount';
+import Statistics from 'components/Statistics';
 import { account } from 'some-serv';
 import c from './AccountDetails.module.scss';
 
 const AccountDetails = () => {
   return (
     <div className={c.accountDetails}>
-      <AccountInfomation account={account} />
+      {account?.name ? (
+        <>
+          <AccountInfomation account={account} />
+          <Statistics />
+        </>
+      ) : (
+        <AddAccount />
+      )}
     </div>
   );
 };

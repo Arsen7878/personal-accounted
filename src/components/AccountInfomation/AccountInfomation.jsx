@@ -4,6 +4,7 @@ const AccountInfomation = ({ account }) => {
   return (
     <div className={c.accountInformation}>
       <div className={c.accountInfText}>
+        <h3 className={c.title}>Информация о счёте</h3>
         <p className={c.titleText}>
           Наименование счета:
           <span className={c.inf}>{account.name}</span>
@@ -21,12 +22,18 @@ const AccountInfomation = ({ account }) => {
           <span className={c.inf}>{account.registration}</span>
         </p>
       </div>
-      <div>
-        <Button title="Добавить расход " />
-        <Button title="Добавить доход" />
-      </div>
-      <div>
-        <Button title="Удалить текущий счёт" />
+      <div className={c.boxBtnsAdd}>
+        <ul className={c.list}>
+          <li className={c.item}>
+            <Button title="Добавить расход" type="add" />
+          </li>
+          <li className={c.item}>
+            <Button title="Добавить доход" type="add" />
+          </li>
+          <li className={c.item}>
+            <Button title="Удалить текущий счёт" type="delete" />
+          </li>
+        </ul>
       </div>
     </div>
   );

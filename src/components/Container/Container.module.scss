@@ -1,5 +1,9 @@
+@use '../../styles/variables' as var;
+
 .container {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  background: var.$BGContainer;
+  border-radius: 15px;
 }

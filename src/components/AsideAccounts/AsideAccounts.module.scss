@@ -1,2 +1,11 @@
+@use '../../styles/variables' as var;
+
+.text {
+  text-align: center;
+}
+
 .asideAccounts {
+  border: 2px solid var.$mainBorderColor;
+  border-radius: 15px;
+  padding: 10px;
 }

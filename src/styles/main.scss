@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 p {
   padding: 0;
   margin: 0;
@@ -9,6 +14,9 @@ p {
 
 body {
   font-family: 'Lato', sans-serif;
+  background-image: url('../images/gradient_background_backdrop_multicolor_colorful_vibrant_3840x2160.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 button {
@@ -24,7 +32,8 @@ ul {
   margin: 0;
 }
 
-h2 {
+h2,
+h3 {
   padding: 0;
   margin: 0;
 }

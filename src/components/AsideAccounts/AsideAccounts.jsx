@@ -5,7 +5,11 @@ import c from './AsideAccounts.module.scss';
 const AsideAccounts = () => {
   return (
     <div className={c.asideAccounts}>
-      <ListAccounts accounts={accounts} />
+      {accounts.length !== 0 ? (
+        <ListAccounts accounts={accounts} />
+      ) : (
+        <p className={c.text}>У Вас пока нет активных счетов!</p>
+      )}
     </div>
   );
 };

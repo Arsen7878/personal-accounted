@@ -2,8 +2,8 @@
 
 .list {
   display: flex;
-  border: 1px solid black;
   padding: 10px;
+  border-bottom: 1px solid var.$mainBorderColor;
 }
 
 .item {
@@ -13,12 +13,12 @@
 
   padding: 10px;
   border-radius: 5px;
-  background-color: white;
+  background-color: none;
   transition: background 250ms ease;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background-color: var.$colorHover;
+    background-color: var.$mainBorderColor;
   }
 }

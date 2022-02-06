@@ -1,5 +1,22 @@
+@use '../../styles/variables' as var;
+
 .accountInfText {
   margin-bottom: 50px;
+  padding: 0 10px 10px;
+  border: 1px solid var.$mainBorderColor;
+  border-radius: 10px;
+}
+
+.title {
+  display: block;
+  padding: 25px 0;
+  border-bottom: 2px solid var.$mainBorderColor;
+  font-size: 18px;
+}
+.accountInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .titleText {
@@ -7,12 +24,30 @@
   &:not(:last-child) {
     margin-bottom: 10px;
   }
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 10px;
+  // border: 2px solid var.$mainBorderColor;
+  // border-radius: 10px;
+  padding: 10px 0;
 }
 
 .inf {
   text-decoration: underline;
   margin-left: 5px;
+}
+
+.btnAddExpense {
+  margin-bottom: 10px;
+}
+
+.boxBtnDeleteAccount {
+  margin-top: 50px;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.example {
+  font-size: 20px;
 }
