@@ -1,8 +1,8 @@
 import Button from 'components/Button';
 import { useState } from 'react';
-import c from './RegisterForm.module.scss';
+import c from './LoginForm.module.scss';
 
-const RegisterForm = () => {
+const LoginForm = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -47,13 +47,10 @@ const RegisterForm = () => {
         </label>
       </div>
       <div className={c.boxBtn}>
-        <Button title="Зарегестрироваться" />
+        <Button title="Войти" />
       </div>
-      <p className={c.text}>
-        Если Вы зарегестрированы <span className={c.linkText}>нажмите тут</span>
-      </p>
     </form>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;

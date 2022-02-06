@@ -1,6 +1,7 @@
 {
   "name": "personal-accounted",
   "version": "0.1.0",
+  "homepage": "https://Arsen7878.github.io/personal-accounted/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -8,15 +9,23 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "sass": "^1.49.7",
     "web-vitals": "^2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arsen7878/personal-accounted.git"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +49,7 @@
     "eslint": "^7.32.0",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
+    "lato-font": "^3.0.0",
     "lint-staged": "^12.3.3",
     "node-sass": "^7.0.1",
     "prettier": "^2.5.1",
@@ -47,7 +57,7 @@
     "sass-loader": "^12.4.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,jsx}": "eslint --cache --fix",
+    "*.{js,css,scss,md}": "prettier --write"
   }
 }

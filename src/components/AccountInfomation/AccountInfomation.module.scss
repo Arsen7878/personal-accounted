@@ -1,0 +1,18 @@
+.accountInfText {
+  margin-bottom: 50px;
+}
+
+.titleText {
+  font-weight: 600;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.inf {
+  text-decoration: underline;
+  margin-left: 5px;
+}

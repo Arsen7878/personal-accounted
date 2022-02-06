@@ -1,0 +1,22 @@
+@use '../../styles/variables' as var;
+
+.item {
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: white;
+  transition: background 250ms ease;
+  width: 250px;
+  text-align: center;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var.$colorHover;
+  }
+
+  border: 2px solid black;
+}
