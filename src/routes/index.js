@@ -5,5 +5,5 @@ export const endpoints = {
   accounts: '/accounts',
   statistics: '/statistics',
   income: '/income',
-  expence: '/expence',
+  expense: '/expense',
 };

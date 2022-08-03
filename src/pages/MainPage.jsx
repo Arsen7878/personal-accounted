@@ -11,9 +11,9 @@ const AccountsView = lazy(() =>
 const IncomeView = lazy(() =>
   import('../components/views/IncomeView' /* webpackChunkName: "income-page"*/),
 );
-const ExpenceView = lazy(() =>
+const ExpenseView = lazy(() =>
   import(
-    '../components/views/ExpenceView' /* webpackChunkName: "expence-page"*/
+    '../components/views/ExpenseView' /* webpackChunkName: "expence-page"*/
   ),
 );
 const StatisticsView = lazy(() =>
@@ -30,7 +30,7 @@ const MainPage = () => {
         <Switch>
           <Route path={endpoints.accounts} component={AccountsView} />
           <Route path={endpoints.income} component={IncomeView} />
-          <Route path={endpoints.expence} component={ExpenceView} />
+          <Route path={endpoints.expense} component={ExpenseView} />
           <Route path={endpoints.statistics} component={StatisticsView} />
         </Switch>
       </Suspense>
