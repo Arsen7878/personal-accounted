@@ -1,7 +1,7 @@
 import ListAccountsItem from 'components/ListAccountsItem';
 import c from './ListAccounts.module.scss';
 import { endpoints } from 'routes';
-import { Link, NavLink, Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ListAccounts = ({ accounts }) => {
   return (
