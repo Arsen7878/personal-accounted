@@ -1,26 +1,23 @@
-// import {
-//   configureStore,
-//   getDefaultMiddleware,
-//   combineReducers,
-// } from '@reduxjs/toolkit';
+import {
+  configureStore,
+  getDefaultMiddleware,
+  combineReducers,
+} from '@reduxjs/toolkit';
 
-// import {
-//   persistReducer,
-//   persistStore,
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-// } from 'redux-persist';
+import {
+  persistReducer,
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 
-// import storage from 'redux-persist/lib/storage';
+import logger from 'redux-logger';
 
-//   import { authReducer } from './auth/auth-reducer';
-//   import { contactsReducer } from './contatcs/contacts-reducer';
-
-// import logger from 'redux-logger';
+import { modalReducer } from './modal/modal-reducer';
 
 // const authPersistConfig = {
 //   key: 'auth',
@@ -28,26 +25,25 @@
 //   whitelist: ['token'],
 // };
 
-//   const reducer = combineReducers({
-//     auth: persistReducer(authPersistConfig, authReducer),
-//     contacts: contactsReducer,
-//   });
+const reducer = combineReducers({
+  modal: modalReducer,
+});
 
 // прослойки, которые проходит action перед тем как попасть в reducer
-// const middleware = [
-//   ...getDefaultMiddleware({
-//     serializableCheck: {
-//       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//     },
-//   }),
-//   logger,
-// ];
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
+  logger,
+];
 
-// export const store = configureStore({
-//   reducer,
-//   devTools: process.env.NODE_ENV === 'development',
-//   middleware,
-// });
+export const store = configureStore({
+  reducer,
+  devTools: process.env.NODE_ENV === 'development',
+  middleware,
+});
 
 // const a = {
 //   auth: { user: { name: null, token: null } },
@@ -55,4 +51,4 @@
 //   transactions: [],
 // };
 
-// export const persistor = persistStore(store);
+// export const persister = persistStore(store);
