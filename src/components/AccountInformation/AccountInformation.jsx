@@ -1,6 +1,6 @@
 import ButtonsChangeAccounts from 'components/ButtonsChangeAccounts';
-import c from './AccountInfomation.module.scss';
-const AccountInfomation = ({ account }) => {
+import c from './AccountInformation.module.scss';
+const AccountInformation = ({ account }) => {
   if (account.length !== 0) {
     const { name, balance, currency, registration } = account[0];
     return (
@@ -36,4 +36,4 @@ const AccountInfomation = ({ account }) => {
   return <div></div>;
 };
 
-export default AccountInfomation;
+export default AccountInformation;
