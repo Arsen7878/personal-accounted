@@ -18,6 +18,7 @@ import {
 import logger from 'redux-logger';
 
 import { modalReducer } from './modal/modal-reducer';
+import { accountsReducer } from './accounts/accounts-reducers';
 
 // const authPersistConfig = {
 //   key: 'auth',
@@ -27,6 +28,7 @@ import { modalReducer } from './modal/modal-reducer';
 
 const reducer = combineReducers({
   modal: modalReducer,
+  accounts: accountsReducer,
 });
 
 // прослойки, которые проходит action перед тем как попасть в reducer

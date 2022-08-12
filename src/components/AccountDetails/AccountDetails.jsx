@@ -1,4 +1,4 @@
-import AccountInfomation from 'components/AccountInfomation';
+import AccountInformation from 'components/AccountInformation';
 import AddAccount from 'components/AddAccount';
 import Statistics from 'components/Statistics';
 import { useHistory } from 'react-router-dom';
@@ -8,12 +8,13 @@ const AccountDetails = ({ account }) => {
   const history = useHistory();
   const id = history?.location?.state?.path || 1;
   const filterAccount = account.filter(el => el.id === id);
+
   return (
     <div className={c.accountDetails}>
       {account ? (
         <>
-          <AccountInfomation account={filterAccount} />
-          <Statistics />
+          <AccountInformation account={filterAccount} />
+          <Statistics transaction={filterAccount} />
         </>
       ) : (
         <AddAccount />

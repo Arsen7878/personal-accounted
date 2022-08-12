@@ -13,7 +13,7 @@ const IncomeView = lazy(() =>
 );
 const ExpenseView = lazy(() =>
   import(
-    '../components/views/ExpenseView' /* webpackChunkName: "expence-page"*/
+    '../components/views/ExpenseView' /* webpackChunkName: "expense-page"*/
   ),
 );
 const StatisticsView = lazy(() =>

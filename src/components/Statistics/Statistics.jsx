@@ -1,9 +1,8 @@
 import StatisticsList from 'components/StatisticsList';
 import c from './Statistics.module.scss';
-import { statisticsList } from 'some-serv';
 import getDate from 'utils/getDate';
 
-const Statistics = () => {
+const Statistics = ({ transaction }) => {
   return (
     <div className={c.boxStatistics}>
       <div className={c.boxHeader}>
@@ -13,7 +12,7 @@ const Statistics = () => {
         </div>
       </div>
 
-      <StatisticsList statisticsList={statisticsList} />
+      <StatisticsList statisticsList={transaction} />
     </div>
   );
 };

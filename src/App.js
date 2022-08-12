@@ -5,15 +5,20 @@ import MainPage from 'pages/MainPage';
 import RegisterPage from 'pages/RegisterPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { stateModal } from 'redux/modal/modal-operation';
-import { getStateModal } from 'redux/modal/modal-selector';
+import { getStateModal, getTypeModal } from 'redux/modal/modal-selector';
+import FormAddExpense from 'components/FormAddExpense';
+import { buttonsAccounts } from 'some-serv';
 
 import './styles/main.scss';
+import FormAddIncome from 'components/FormAddIncome';
+import ModalView from 'components/ModalView';
 
 function App() {
   const isOpenModal = useSelector(getStateModal);
   const dispatch = useDispatch();
+
   const onCloseModal = () => {
-    dispatch(stateModal(false));
+    dispatch(stateModal({ value: false, type: '' }));
   };
 
   return (
@@ -23,7 +28,11 @@ function App() {
         <MainPage />
         {/* <RegisterPage /> */}
       </Container>
-      {isOpenModal && <Modal onCloseModal={onCloseModal} />}
+      {isOpenModal && (
+        <Modal onCloseModal={onCloseModal}>
+          <ModalView onCloseModal={onCloseModal} />
+        </Modal>
+      )}
     </div>
   );
 }

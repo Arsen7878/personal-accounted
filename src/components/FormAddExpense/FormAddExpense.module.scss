@@ -1,0 +1,25 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.select {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.boxBtn {
+  display: flex;
+  justify-content: space-around;
+}
