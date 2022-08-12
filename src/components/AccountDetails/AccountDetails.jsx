@@ -14,6 +14,7 @@ const AccountDetails = ({ account }) => {
       {account ? (
         <>
           <AccountInformation account={filterAccount} />
+
           <Statistics transaction={filterAccount} />
         </>
       ) : (
