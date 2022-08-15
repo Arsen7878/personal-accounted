@@ -8,7 +8,6 @@ import c from './ModalView.module.scss';
 
 const ModalView = ({ onCloseModal }) => {
   const typeModal = useSelector(getTypeModal);
-
   return (
     <div className={c.modalView}>
       {typeModal === buttonsAccounts.add && (

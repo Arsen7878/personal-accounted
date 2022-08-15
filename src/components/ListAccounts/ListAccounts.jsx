@@ -1,20 +1,15 @@
 import ListAccountsItem from 'components/ListAccountsItem';
 import c from './ListAccounts.module.scss';
-import { endpoints } from 'routes';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 const ListAccounts = ({ accounts }) => {
+  const match = useRouteMatch();
   return (
     <ul className={c.list}>
-      {accounts.map(({ title, id }) => (
+      {accounts.map(({ name, id }) => (
         <li key={id} className={c.item}>
-          <Link
-            to={{
-              pathname: `${endpoints.accounts}/${id}`,
-              state: { path: id },
-            }}
-          >
-            <ListAccountsItem title={title} />
+          <Link to={{ pathname: `${match.url}/${id}`, state: { id } }}>
+            <ListAccountsItem title={name} />
           </Link>
         </li>
       ))}

@@ -1,21 +1,26 @@
 import AccountInformation from 'components/AccountInformation';
 import AddAccount from 'components/AddAccount';
 import Statistics from 'components/Statistics';
-import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { stateActiveID } from 'redux/accounts/accounts-operations';
+import { filterAccount } from 'utils/filterAccounts';
 import c from './AccountDetails.module.scss';
 
-const AccountDetails = ({ account }) => {
-  const history = useHistory();
-  const id = history?.location?.state?.path || 1;
-  const filterAccount = account.filter(el => el.id === id);
+const AccountDetails = ({ accounts }) => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(stateActiveID(id));
+  }, [dispatch, id]);
 
   return (
     <div className={c.accountDetails}>
-      {account ? (
+      {accounts.length !== 0 ? (
         <>
-          <AccountInformation account={filterAccount} />
-
-          <Statistics transaction={filterAccount} />
+          <AccountInformation account={filterAccount(accounts, id)} />
+          <Statistics transaction={filterAccount(accounts, id)} />
         </>
       ) : (
         <AddAccount />
