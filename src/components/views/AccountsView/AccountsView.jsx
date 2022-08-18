@@ -10,12 +10,12 @@ const AccountsView = () => {
   const match = useRouteMatch();
   return (
     <div className={c.blockInf}>
+      <AsideAccounts />
       <Switch>
         <Route path={`${match.url}/:id`}>
           <AccountDetails accounts={accounts} />
         </Route>
       </Switch>
-      <AsideAccounts />
     </div>
   );
 };

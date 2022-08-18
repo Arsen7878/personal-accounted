@@ -1,5 +1,7 @@
 import Button from 'components/Button';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { endpoints } from 'routes';
 import c from './RegisterForm.module.scss';
 
 const RegisterForm = () => {
@@ -21,6 +23,8 @@ const RegisterForm = () => {
         break;
     }
   };
+
+  const onClick = () => {};
 
   return (
     <form className={c.form}>
@@ -47,10 +51,13 @@ const RegisterForm = () => {
         </label>
       </div>
       <div className={c.boxBtn}>
-        <Button title="Зарегестрироваться" />
+        <Button title="Зарегестрироваться" ocClick={onClick} />
       </div>
       <p className={c.text}>
-        Если Вы зарегестрированы <span className={c.linkText}>нажмите тут</span>
+        Если Вы зарегестрированы{' '}
+        <Link to={endpoints.login}>
+          <span className={c.linkText}>нажмите тут</span>
+        </Link>
       </p>
     </form>
   );

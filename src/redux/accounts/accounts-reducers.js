@@ -621,9 +621,7 @@ const initialState = {
 
 export const accountsReducer = createReducer(initialState, {
   [stateAccounts]: (state, { payload }) => {
-    state.accounts = [...state.accounts].filter(
-      el => el.id !== Number(payload),
-    );
+    state.accounts = state.accounts.filter(el => el.id !== Number(payload));
     state.activeAccountID = payload;
   },
 

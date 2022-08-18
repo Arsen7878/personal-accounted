@@ -5,13 +5,13 @@ import MainPage from 'pages/MainPage';
 import RegisterPage from 'pages/RegisterPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { stateModal } from 'redux/modal/modal-operation';
-import { getStateModal, getTypeModal } from 'redux/modal/modal-selector';
-import FormAddExpense from 'components/FormAddExpense';
-import { buttonsAccounts } from 'some-serv';
+import { getStateModal } from 'redux/modal/modal-selector';
+import { endpoints } from 'routes';
 
 import './styles/main.scss';
-import FormAddIncome from 'components/FormAddIncome';
 import ModalView from 'components/ModalView';
+import { Suspense } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   const isOpenModal = useSelector(getStateModal);
@@ -24,15 +24,25 @@ function App() {
   return (
     <div className="App">
       <Container>
-        {/* <LoginPage /> */}
-        <MainPage />
-        {/* <RegisterPage /> */}
+        <Suspense>
+          <Switch>
+            <Route path={endpoints.login}>
+              <LoginPage />
+            </Route>
+            <Route path={endpoints.main}>
+              <MainPage />
+            </Route>
+            <Route path={endpoints.register}>
+              <RegisterPage />
+            </Route>
+          </Switch>
+        </Suspense>
+        {isOpenModal && (
+          <Modal onCloseModal={onCloseModal}>
+            <ModalView onCloseModal={onCloseModal} />
+          </Modal>
+        )}
       </Container>
-      {isOpenModal && (
-        <Modal onCloseModal={onCloseModal}>
-          <ModalView onCloseModal={onCloseModal} />
-        </Modal>
-      )}
     </div>
   );
 }

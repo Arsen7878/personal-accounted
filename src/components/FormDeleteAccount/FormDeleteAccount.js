@@ -8,23 +8,38 @@ import {
   stateActiveID,
 } from 'redux/accounts/accounts-operations';
 import { useSelector } from 'react-redux';
-import { getActiveAccountID } from 'redux/accounts/accounts-selectors';
+import {
+  getActiveAccountID,
+  getStateAccounts,
+} from 'redux/accounts/accounts-selectors';
 import { useHistory } from 'react-router-dom';
+import { endpoints } from 'routes';
 
 const FormDeleteAccount = ({ onCloseModal }) => {
-  const dispatch = useDispatch();
   const activeID = useSelector(getActiveAccountID);
+  let accounts = useSelector(getStateAccounts);
+  const dispatch = useDispatch();
   const history = useHistory();
+  const name = accounts.filter(el => el.id === Number(activeID))[0].name;
 
   const onDeleteAccount = e => {
-    dispatch(stateAccounts(activeID));
-    dispatch(stateActiveID(null));
+    dispatch(stateAccounts(Number(activeID)));
+    accounts = accounts.filter(el => el.id !== Number(activeID));
+
+    if (accounts.length !== 0) {
+      history.push(`${accounts[0].id}`);
+      dispatch(stateActiveID(accounts[0]?.id));
+    } else {
+      history.push(endpoints.accounts);
+      dispatch(stateActiveID(null));
+    }
+
     onCloseModal(e);
   };
 
   return (
     <div className={c.deleteAccountBox}>
-      <p className={c.text}>Уверен, что хочешь удалить счет {activeID}? </p>
+      <p className={c.text}>Уверен, что хочешь удалить счет {name}?</p>
       <div className={c.btnBox}>
         <div>
           <Button title="Отмена" onClick={e => onCloseModal(e)} />
